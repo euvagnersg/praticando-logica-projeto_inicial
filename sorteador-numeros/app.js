@@ -45,3 +45,14 @@ function alterarStatusBotao(){
         botao.classList.add("container__botao-desabilitado");
     }
 }
+
+function validarNumeros(){
+    let quantidade =  parseInt(document.getElementById("quantidade").value);
+    let de = parseInt(document.getElementById("de").value);
+    let ate = parseInt(document.getElementById("ate").value);
+
+    if (quantidade > ate){
+        alert("Atenção: O numero máximo não pode ser menor que o a quantidade de número selecionados");
+        document.getElementById("ate").value = "";
+    }
+}
