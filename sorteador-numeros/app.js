@@ -50,9 +50,18 @@ function validarNumeros(){
     let quantidade =  parseInt(document.getElementById("quantidade").value);
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElementById("ate").value);
+    let diferenca = ate - de;
 
     if (quantidade > ate){
         alert("Atenção: O numero máximo não pode ser menor que o a quantidade de número selecionados");
+        document.getElementById("ate").value = "";
+    }else if (de > ate) {
+        alert("Atenção: O numero minimo não pode ser maior que o número maximo");     
+        document.getElementById("de").value = "";
+        document.getElementById("ate").value = "";   
+    }else if (quantidade > diferenca){
+        alert("Atenção: A quantidade de números sorteados não pode ser maior que a diferença dos números mínimo e máximo");
+        document.getElementById("de").value = "";
         document.getElementById("ate").value = "";
     }
 }
